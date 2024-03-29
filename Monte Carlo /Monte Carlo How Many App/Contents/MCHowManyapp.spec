@@ -1,45 +1,48 @@
+# -*- mode: python ; coding: utf-8 -*-
+
 block_cipher = None
 
-a = Analysis(
-    ['MCHowManyapp.py'],  # Correct path to your main Python script
-    pathex=[],
-    binaries=[],
-    datas=[
-        # Relative paths to the resources based on the structure in the provided screenshot
-        ('Resources/monteimage.jpeg', 'Resources'),
-        ('Resources/Monte Carlo How Many.xlsx', 'Resources'),
-        ('Resources/Monte Carlo How Many User Guide.docx', 'Resources')
-    ],
-    hiddenimports=[],
-    hookspath=[],
-    hooksconfig={},
-    runtime_hooks=[],
-    excludes=[],
-    noarchive=False
-)
+a = Analysis(['MCHowManyapp.py'],
+             pathex=[],
+             binaries=[],
+             datas=[('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns', '.'),
+                     ('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/Monte Carlo How Many User Guide.docx', '.'),
+                     ('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/Monte Carlo How Many.xlsx', '.')],
+             hiddenimports=[],
+             hookspath=[],
+             hooksconfig={},
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
 pyz = PYZ(a.pure, cipher=block_cipher)
 
-exe = EXE(
-    pyz,
-    a.scripts,
-    a.binaries,
-    a.datas,
-    [],
-    name='Monte Carlo How Many',
-    debug=False,
-    bootloader_ignore_signals=False,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    runtime_tmpdir=None,
-    console=False,
-    # Relative path to the icon file
-    icon='Monte Carlo How Many App/Contents/Resources/MCHWicon.icns',
-)
-app = BUNDLE(
-    exe,
-    name='Monte Carlo How Many.app',
-    # Relative path to the icon file
-    icon='Resources/MCHWicon.icns',
-    bundle_identifier='com.example.montecarlohowmany'
-)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          [],
+          name='MCHowManyapp',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=True,
+          disable_windowed_traceback=False,
+          argv_emulation=False,
+          target_arch=None,
+          codesign_identity=None,
+          entitlements_file=None,
+          icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns'
+          )
+
+app = BUNDLE(exe,
+             name='MCHowManyapp.app',
+             icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns',
+             bundle_identifier=None
+             )

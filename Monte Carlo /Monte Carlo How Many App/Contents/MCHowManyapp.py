@@ -4,63 +4,119 @@ import matplotlib.pyplot as plt
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image as OpenPyXLImage
 import os
-from PIL import Image as PILImage, ImageTk
+# from PIL import Image, ImageTk, ImageResampling  # Commented out image-related imports
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import shutil
 import sys
-
-def resource_path(relative_path):
-    """ Get the absolute path to the resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-    
-    resolved_path = os.path.join(base_path, relative_path)
-    if os.path.exists(resolved_path):
-        print(f"Resource found: '{resolved_path}'")
-    else:
-        print(f"Resource NOT found: '{resolved_path}'")
-    return resolved_path
-
+import traceback
 
 class MonteCarloApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Monte Carlo How Many")
 
+        # Define the base path for resources
+        self.resources_dir = self.get_base_path()
+
         # Define the paths for resources
-        self.image_path = resource_path('monteimage.jpeg')
-        self.template_file_path = resource_path('Monte Carlo How Many.xlsx')
-        self.instructions_file_path = resource_path('Monte Carlo How Many User Guide.docx')
+        self.initialize_resource_paths()
 
-        print(f"Image path set to: {self.image_path}")  # Ensure this is placed after image_path is defined
+        # Load resources and setup UI after paths are set
+        self.load_resources()
         self.setup_ui()
-        self.check_file_existence()
 
-    def setup_ui(self):
-        # Attempt to load and display the image
-        try:
-            image = PILImage.open(self.image_path).resize((100, 100), PILImage.LANCZOS)
-            img = ImageTk.PhotoImage(image)
-            image_label = tk.Label(self.root, image=img)
-            image_label.image = img  # Keep a reference
-            image_label.pack(padx=10, pady=10)
-        except FileNotFoundError:
-            messagebox.showerror("Error", "Image file not found.")
-            return  # Exit if image not found to avoid further execution errors
-        
-        # Create buttons for various actions
+    def get_base_path(self):
+        """Get the base path for resources."""
+        if getattr(sys, 'frozen', False):
+            # Running in a bundle
+            return sys._MEIPASS
+        else:
+            # Running live - adjust this path to where your resources are in development
+            return "/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources"
+
+    def initialize_resource_paths(self):
+        """Initialize resource paths."""
+        # self.image_path = os.path.join(self.resources_dir, 'monteimage.jpeg')  # Commented out image path
+        self.template_file_path = os.path.join(self.resources_dir, 'Monte Carlo How Many.xlsx')
+        self.instructions_file_path = os.path.join(self.resources_dir, 'Monte Carlo How Many User Guide.docx')
+
+    def load_buttons(self, button_frame):
+        """Load buttons within the button frame."""
         actions = [
-            ("Download Template", self.download_template), 
-            ("Upload Modified Template", self.upload_template), 
+            ("Download Template", self.download_template),
+            ("Upload Modified Template", self.upload_template),
             ("Instructions", self.download_instructions)
         ]
         for text, command in actions:
-            tk.Button(self.root, text=text, command=command).pack(pady=10)
-    
+            button = tk.Button(button_frame, text=text, command=command)
+            button.pack(side=tk.LEFT, padx=5, pady=5)
+
+    # def display_image(self, image_frame):
+    #     # Attempt to load and display the image within the image frame
+    #     try:
+    #         image = Image.open(self.image_path)
+    #         image = image.resize((100, 100), ImageResampling.LANCZOS)  # Updated this line
+    #         img = ImageTk.PhotoImage(image)
+    #         image_label = tk.Label(image_frame, image=img)
+    #         image_label.image = img  # Keep a reference
+    #         image_label.pack(side='top', pady=10, anchor='n')  # Adjusted this line
+    #     except Exception as e:
+    #         messagebox.showerror("Error", f"Failed to open image: {e}")
+    #         traceback.print_exc()
+
+    def setup_ui(self):
+        # Create the UI elements here
+        # Create a frame for the image
+        # image_frame = tk.Frame(self.root)
+        # image_frame.pack(fill=tk.BOTH, expand=True)
+
+        # Create a frame for the buttons
+        button_frame = tk.Frame(self.root)
+        button_frame.pack(fill='x', expand=False)
+
+        # self.display_image(image_frame)  # Commented out image display
+        self.load_buttons(button_frame)
+
+    def load_resources(self):
+        # Define the paths for resources using `resources_dir`
+        # self.image_path = os.path.join(self.resources_dir, 'monteimage.jpeg')
+        self.template_file_path = os.path.join(self.resources_dir, 'Monte Carlo How Many.xlsx')
+        self.instructions_file_path = os.path.join(self.resources_dir, 'Monte Carlo How Many User Guide.docx')
+
+        # Debugging: check if the files actually exist at the specified paths
+        for path in [self.template_file_path, self.instructions_file_path]:
+            if os.path.isfile(path):
+                print(f"Confirmed: The file exists at {path}")
+            else:
+                print(f"File not found at {path}")
+        # Attempt to load and display the image
+        # try:
+        #     image = PILImage.open(self.image_path)
+        #     img = ImageTk.PhotoImage(image)
+        #     image_label = tk.Label(self.root, image=img)
+        #     image_label.image = img  # Keep a reference so it's not garbage-collected
+        #     image_label.pack(padx=10, pady=10)
+        # except Exception as e:
+        #     messagebox.showerror("Error", f"Failed to open image: {e}")
+        #     traceback.print_exc()
+
+        # Attempt to load the Excel file
+        try:
+            df = pd.read_excel(self.template_file_path)
+            print("Excel file loaded successfully.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to open Excel file: {e}")
+            traceback.print_exc()
+
+        # Attempt to open the User Guide
+        try:
+            with open(self.instructions_file_path, 'r') as f:
+                print("User Guide loaded successfully.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to open User Guide: {e}")
+            traceback.print_exc()    
+
     def check_file_existence(self):
         for file_path in [self.template_file_path, self.instructions_file_path]:
             print(f"{file_path} - {'found' if os.path.exists(file_path) else 'not found'}")
@@ -154,7 +210,7 @@ class MonteCarloApp:
                 messagebox.showerror("Error", "'Days To Simulate' contains invalid data.")
                 return
 
-            num_simulations = int(df_control.at[0, 'Total Simulations'])
+            num_simulations = 10000  # Hard coded number of simulations
             num_days_to_simulate = int(df_control.at[0, 'Days To Simulate'])
 
             # Perform simulations
@@ -179,9 +235,6 @@ class MonteCarloApp:
             plt.figure(figsize=(10, 6))
             plt.hist(simulation_results, bins=50, alpha=0.75)
             plt.title('Histogram of Total Throughput per Simulation')
-            plt.xlabel('Total Throughput')
-            plt.ylabel('Frequency')
-            plt.grid(True)
             histogram_path = os.path.join(self.resources_dir, 'simulation_totals_histogram.png')
             plt.savefig(histogram_path)
             plt.close()
@@ -203,9 +256,12 @@ class MonteCarloApp:
         except ValueError as ve:
             messagebox.showerror("Error", f"Error processing template: {ve}")
             print(f"Error processing template: {ve}")
+            pass
         except Exception as e:
-            messagebox.showerror("Error", f"An unexpected error occurred: {e}")
-            print(f"An unexpected error occurred: {e}")
+            messagebox.showerror("Error", f"An error occurred: {e}")
+            print(f"An error occurred: {e}")
+            pass
+
 
 def main():
     root = tk.Tk()
