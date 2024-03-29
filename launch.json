@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Convert Timestamps",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/Hours To Days Converter/converthourstodays.py",
+            "args": [
+                "${workspaceFolder}/Hours To Days Converter/HoursConvertTemplate.xlsx",
+                "${workspaceFolder}/Hours To Days Converter/ConvertedHours.xlsx"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
