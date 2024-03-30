@@ -1,11 +1,9 @@
-# -*- mode: python ; coding: utf-8 -*-
-
 block_cipher = None
 
 a = Analysis(['MCHowManyapp.py'],
              pathex=[],
              binaries=[],
-             datas=[('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns', '.'),
+             datas=[('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MonteCarloHowMany.icns', '.'),
                      ('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/Monte Carlo How Many User Guide.docx', '.'),
                      ('/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/Monte Carlo How Many.xlsx', '.')],
              hiddenimports=[],
@@ -38,11 +36,11 @@ exe = EXE(pyz,
           target_arch=None,
           codesign_identity=None,
           entitlements_file=None,
-          icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns'
+          icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MonteCarloHowMany.icns'
           )
 
 app = BUNDLE(exe,
              name='MCHowManyapp.app',
-             icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MCHWicon.icns',
+             icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MonteCarloHowMany.icns',
              bundle_identifier=None
              )

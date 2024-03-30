@@ -8,7 +8,7 @@ a = Analysis(['converthourstodays.py'],
              datas=[('/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/ConvertedHours.xlsx', '.'),
                      ('/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/HoursConvertTemplate.xlsx', '.'),
                      ('/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/AA Hours To Days Converter Instructions.docx', '.'),
-                     ('/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/New icon.icns', '.')],
+                     ('/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/Hours To Days Converter.icns', '.')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
@@ -39,11 +39,11 @@ exe = EXE(pyz,
           target_arch=None,
           codesign_identity=None,
           entitlements_file=None,
-          icon='/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/New icon.icns'
+          icon='/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/Hours To Days Converter.icns'
           )
 
 app = BUNDLE(exe,
              name='converthourstodays.app',
-             icon='/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/New icon.icns',
+             icon='/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/Hours To Days Converter.icns',
              bundle_identifier=None
              )
