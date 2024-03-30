@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualization with D3.js</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <script>
+        // D3.js code to create visualizations goes here
+        d3.select("body")
+          .append("svg")
+            .attr("width", 100)
+            .attr("height", 100)
+          .append("circle")
+            .attr("cx", 50)
+            .attr("cy", 50)
+            .attr("r", 40)
+            .style("fill", "blue");
+    </script>
+</body>
+</html>
