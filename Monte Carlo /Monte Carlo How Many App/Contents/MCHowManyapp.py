@@ -32,7 +32,6 @@ class MonteCarloApp:
             # Running in a bundle
             return sys._MEIPASS
         else:
-            # Running live - adjust this path to where your resources are in development
             return "/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources"
 
     def initialize_resource_paths(self):
