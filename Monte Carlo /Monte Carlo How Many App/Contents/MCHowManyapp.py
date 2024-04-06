@@ -9,13 +9,23 @@ class MonteCarloApp:
         self.root = root
         self.root.title("Monte Carlo How Many")
 
-        self.resources_dir = "/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources"  # Update this with your actual resources directory
-
         self.ui = MonteCarloUI(self.root)
-        self.file_manager = MonteCarloFileManager(self.resources_dir)  # Pass resources_dir here
-        self.template_processor = MonteCarloTemplateProcessor(self.resources_dir)
+        self._file_manager = None
+        self._template_processor = None
 
         self.setup_ui()
+
+    @property
+    def file_manager(self):
+        if self._file_manager is None:
+            self._file_manager = MonteCarloFileManager(resources_dir='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources')
+        return self._file_manager
+
+    @property
+    def template_processor(self):
+        if self._template_processor is None:
+            self._template_processor = MonteCarloTemplateProcessor(resources_dir='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources')
+        return self._template_processor
 
     def setup_ui(self):
         button_frame = self.ui.create_button_frame()
@@ -26,7 +36,7 @@ class MonteCarloApp:
         })
 
     def download_template(self):
-        destination_path = self.file_manager.select_destination_directory(self.root)  # Pass root argument here
+        destination_path = self.file_manager.select_destination_directory(self.root)
         if destination_path:
             try:
                 self.file_manager.download_template(destination_path)
@@ -34,9 +44,8 @@ class MonteCarloApp:
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to download the template: {e}")
 
-
     def upload_template(self):
-        file_path = self.file_manager.select_template_file(self.root)  # Pass root argument here
+        file_path = self.file_manager.select_template_file(self.root)
         if file_path:
             self.template_processor.process_template(file_path)
 
@@ -56,5 +65,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
