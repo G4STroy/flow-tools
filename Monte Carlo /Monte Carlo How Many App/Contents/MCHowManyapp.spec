@@ -1,3 +1,5 @@
+# -*- mode: python ; coding: utf-8 -*-
+
 block_cipher = None
 
 a = Analysis(['MCHowManyapp.py'],
@@ -34,8 +36,6 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           argv_emulation=False,
           target_arch=None,
-          codesign_identity=None,
-          entitlements_file=None,
           icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MonteCarloHowMany.icns'
           )
 
@@ -44,3 +44,28 @@ app = BUNDLE(exe,
              icon='/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/Resources/MonteCarloHowMany.icns',
              bundle_identifier=None
              )
+
+# Post-build code signing and notarization steps
+import os
+
+# Path to your 'entitlements.plist' file
+entitlements = '/Users/troy.lightfoot/Github Projects/flow-tools/Monte Carlo /Monte Carlo How Many App/Contents/entitlements.plist'
+
+# Developer ID Application identity (replace with your actual identity)
+codesign_identity = "Developer ID Application: Troy Lightfoot (g4stroy@gmail.com)"
+
+# Code sign the .app
+app_path = os.path.join('dist', 'MCHowManyapp.app')
+codesign_command = f"codesign --deep --force --options runtime --entitlements {entitlements} --sign '{codesign_identity}' '{app_path}'"
+
+# Run the codesign command after build
+a.binaries.append(('codesign', None, 'EXECUTABLE'))
+a.datas.append((entitlements, '.', 'DATA'))
+
+def codesign_app():
+    if os.system(codesign_command) == 0:
+        print("App signed successfully.")
+    else:
+        raise Exception("Code signing failed.")
+
+codesign_app()
