@@ -1,0 +1,4 @@
+([('MCHowManyapp',
+   '/Users/troy.lightfoot/Github '
+   'Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/dist/MCHowManyapp',
+   'EXECUTABLE')],)
