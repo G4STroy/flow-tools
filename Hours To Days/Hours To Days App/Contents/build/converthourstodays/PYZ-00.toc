@@ -3265,6 +3265,10 @@
   ('threading',
    '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py',
    'PYMODULE'),
+  ('timestamp_converter_app',
+   '/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To '
+   'Days App/Contents/timestamp_converter_app.py',
+   'PYMODULE'),
   ('tkinter',
    '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/tkinter/__init__.py',
    'PYMODULE'),

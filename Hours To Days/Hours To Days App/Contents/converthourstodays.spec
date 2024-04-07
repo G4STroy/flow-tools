@@ -37,8 +37,6 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           argv_emulation=False,
           target_arch=None,
-          codesign_identity="Developer ID Application: Troy Lightfoot (g4stroy@gmail.com)",
-          entitlements_file="/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Contents/entitlements.plist",
           icon='/Users/troy.lightfoot/Github Projects/flow-tools/Hours To Days/Hours To Days App/Resources/Hours To Days Converter.icns'
           )
 
