@@ -8,8 +8,8 @@ import os
 
 
 class MonteCarloTemplateProcessor:
-    def __init__(self, resources_dir):
-        self.resources_dir = resources_dir
+    def __init__(self, file_manager):
+        self.file_manager = file_manager
 
     def process_template(self, file_path):
         try:

@@ -6,14 +6,17 @@ from PyInstaller.utils.hooks import collect_data_files
 
 block_cipher = None
 
-# Collect all files from the 'Resources' directory and include them in the bundle
-resource_dir = '/Users/troy.lightfoot/Github Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/Resources'
-added_files = [(os.path.join(resource_dir, f), 'Resources') for f in os.listdir(resource_dir) if os.path.isfile(os.path.join(resource_dir, f))]
+# Dynamically determine the resource directory relative to this spec file
+spec_dir = os.path.dirname(__file__)
+resource_dir = os.path.join(spec_dir, 'Resources')
+
+# Use collect_data_files to automatically collect all files in the Resources directory
+added_files = collect_data_files(resource_dir, subdir=None)
 
 a = Analysis(['MCHowManyapp.py'],
              pathex=[],
              binaries=[],
-             datas=added_files,  # Use the added_files variable here
+             datas=added_files,  # Use the collected files
              hiddenimports=["pandas", "numpy", "matplotlib.pyplot"],
              hookspath=[],
              hooksconfig={},
@@ -35,7 +38,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,  # Set to False if your app doesn't need a console window
+    console=False,  # Adjust according to your need for a console window
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
@@ -45,5 +48,5 @@ exe = EXE(
 
 app = BUNDLE(exe,
              name='MCHowManyapp.app',
-             icon='Resources/MonteCarloHowMany.icns',
+             icon=os.path.join('Resources', 'MonteCarloHowMany.icns'),  # Ensure icon path is also relative
              bundle_identifier=None)

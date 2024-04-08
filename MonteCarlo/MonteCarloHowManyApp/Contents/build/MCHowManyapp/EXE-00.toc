@@ -1,6 +1,6 @@
 ('/Users/troy.lightfoot/Github '
  'Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/build/MCHowManyapp/MCHowManyapp',
- True,
+ False,
  False,
  True,
  None,
@@ -70,8 +70,8 @@
  [],
  False,
  False,
- 1712590354,
- [('run',
-   '/opt/homebrew/Cellar/pyinstaller/6.5.0/libexec/lib/python3.12/site-packages/PyInstaller/bootloader/Darwin-64bit/run',
+ 1712590750,
+ [('runw',
+   '/opt/homebrew/Cellar/pyinstaller/6.5.0/libexec/lib/python3.12/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',
    'EXECUTABLE')],
  '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/Python')
