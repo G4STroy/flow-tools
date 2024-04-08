@@ -1,4 +1,10 @@
 ([('MCHowManyapp',
    '/Users/troy.lightfoot/Github '
    'Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/build/MCHowManyapp/MCHowManyapp',
-   'EXECUTABLE')],)
+   'EXECUTABLE'),
+  ('lib-dynload/_struct.cpython-312-darwin.so',
+   '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload/_struct.cpython-312-darwin.so',
+   'EXTENSION'),
+  ('lib-dynload/zlib.cpython-312-darwin.so',
+   '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload/zlib.cpython-312-darwin.so',
+   'EXTENSION')],)

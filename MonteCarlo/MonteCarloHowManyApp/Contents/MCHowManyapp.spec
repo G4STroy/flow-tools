@@ -7,7 +7,7 @@ from PyInstaller.utils.hooks import collect_data_files
 block_cipher = None
 
 # Dynamically determine the resource directory relative to this spec file
-spec_dir = os.path.dirname(__file__)
+spec_dir = os.getcwd()
 resource_dir = os.path.join(spec_dir, 'Resources')
 
 # Use collect_data_files to automatically collect all files in the Resources directory
