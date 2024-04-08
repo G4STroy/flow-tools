@@ -1,16 +1,19 @@
-# -*- mode: python ; coding: utf-8 -*-
+import os
+import pandas
+import numpy
+import matplotlib.pyplot
+from PyInstaller.utils.hooks import collect_data_files
 
 block_cipher = None
+
+# Collect all files from the 'Resources' directory and include them in the bundle
+resource_dir = '/Users/troy.lightfoot/Github Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/Resources'
+added_files = [(os.path.join(resource_dir, f), 'Resources') for f in os.listdir(resource_dir) if os.path.isfile(os.path.join(resource_dir, f))]
 
 a = Analysis(['MCHowManyapp.py'],
              pathex=[],
              binaries=[],
-             datas=[
-                ('aaa/MonteCarloHowManyUserGuide.docx', 'aaa'),
-                ('aaa/Monte Carlo How Many.xlsx', 'aaa'),
-                ('Resources/MonteCarloHowMany.icns', '.'),
-],
-
+             datas=added_files,  # Use the added_files variable here
              hiddenimports=["pandas", "numpy", "matplotlib.pyplot"],
              hookspath=[],
              hooksconfig={},
@@ -20,30 +23,27 @@ a = Analysis(['MCHowManyapp.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-pyz = PYZ(a.pure, cipher=block_cipher)
+pyz = PYZ(a.pure)
 
-exe = EXE(pyz,
-          a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
-          [],
-          name='MCHowManyapp',
-          debug=False,
-          bootloader_ignore_signals=False,
-          strip=False,
-          upx=True,
-          upx_exclude=[],
-          runtime_tmpdir=None,
-          console=True,  # Set to False if you do not want a console window to appear when running the app.
-          disable_windowed_traceback=False,
-          argv_emulation=False,
-          target_arch=None,
-          icon='Resources/MonteCarloHowMany.icns'
-          )
+exe = EXE(
+    pyz,
+    a.scripts,
+    [],
+    exclude_binaries=True,
+    name='MCHowManyapp',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    console=False,  # Set to False if your app doesn't need a console window
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+)
 
 app = BUNDLE(exe,
              name='MCHowManyapp.app',
              icon='Resources/MonteCarloHowMany.icns',
-             bundle_identifier=None
-             )
+             bundle_identifier=None)

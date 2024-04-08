@@ -1,4 +1,3 @@
-# monte_carlo_template_processor.py
 import pandas as pd
 from tkinter import messagebox
 import numpy as np
@@ -6,6 +5,7 @@ import matplotlib.pyplot as plt
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image as OpenPyXLImage
 import os
+
 
 class MonteCarloTemplateProcessor:
     def __init__(self, resources_dir):
@@ -52,7 +52,10 @@ class MonteCarloTemplateProcessor:
             plt.figure(figsize=(10, 6))
             plt.hist(simulation_results, bins=50, alpha=0.75)
             plt.title('Histogram of Total Throughput per Simulation')
-            histogram_path = os.path.join(self.resources_dir, 'simulation_totals_histogram.png')
+
+            # Save the histogram in the same directory as the Excel file
+            histogram_path = os.path.join(os.path.dirname(file_path), 'simulation_totals_histogram.png')
+
             plt.savefig(histogram_path)
             plt.close()
             wb = load_workbook(file_path)

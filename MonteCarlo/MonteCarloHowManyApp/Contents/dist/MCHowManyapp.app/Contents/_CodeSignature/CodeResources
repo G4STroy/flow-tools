@@ -11,12 +11,35 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/lib-dynload/_struct.cpython-312-darwin.so</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			aLOji48Z6vtVgQH9WuGWEjrqKU0=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"68b3a38b8f19eafb558101fd5ae196123aea294d"</string>
+		</dict>
+		<key>Frameworks/lib-dynload/zlib.cpython-312-darwin.so</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			3xEUs0O+VVLQ/6udlr/k2wDlvXU=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"df1114b343be5552d0ffab9d96bfe4db00e5bd75"</string>
+		</dict>
 		<key>Resources/MonteCarloHowMany.icns</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			pdwkQlWSLITbSxa0M05mfrQrqRKzGpYTd53Pj0xlfaE=
 			</data>
+		</dict>
+		<key>Resources/lib-dynload</key>
+		<dict>
+			<key>symlink</key>
+			<string>../Frameworks/lib-dynload</string>
 		</dict>
 	</dict>
 	<key>rules</key>
