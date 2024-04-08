@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MCHowManyapp</string>
 	<key>CFBundleIconFile</key>
-	<string>MonteCarloHowMany.icns</string>
+	<string>icon-windowed.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>MCHowManyapp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
