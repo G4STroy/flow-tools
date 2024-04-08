@@ -1092,6 +1092,10 @@
   ('mimetypes',
    '/opt/homebrew/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/mimetypes.py',
    'PYMODULE'),
+  ('monte_carlo_file_manager',
+   '/Users/troy.lightfoot/Github '
+   'Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/monte_carlo_file_manager.py',
+   'PYMODULE'),
   ('monte_carlo_template_processor',
    '/Users/troy.lightfoot/Github '
    'Projects/flow-tools/MonteCarlo/MonteCarloHowManyApp/Contents/monte_carlo_template_processor.py',
