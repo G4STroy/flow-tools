@@ -1,12 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 a = Analysis(
     ['MCHowManyapp.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=[('Resources/*', 'Resources')],
+    hiddenimports=[
+        'pandas', 'numpy', 'matplotlib', 'matplotlib.backends.backend_tkagg',
+        'openpyxl', 'openpyxl.workbook', 'openpyxl.worksheet', 'openpyxl.drawing.image'
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -21,7 +23,7 @@ exe = EXE(
     [],
     exclude_binaries=True,
     name='MCHowManyapp',
-    debug=False,
+    debug=True,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
@@ -44,6 +46,6 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='MCHowManyapp.app',
-    icon=None,
-    bundle_identifier=None,
+    icon='Resources/MonteCarloHowMany.icns',
+    bundle_identifier='com.example.MCHowManyApp',
 )

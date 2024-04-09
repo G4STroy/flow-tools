@@ -4,13 +4,73 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Resources/MonteCarloHowMany.icns</key>
+		<data>
+		0UT6sfKFy4NZi8sS1tz9jVRtYa8=
+		</data>
+		<key>Resources/Resources/MonteCarloHowMany.icns</key>
+		<data>
+		0UT6sfKFy4NZi8sS1tz9jVRtYa8=
+		</data>
+		<key>Resources/Resources/MonteCarloHowMany.ico</key>
+		<data>
+		TR0mtrvjs3DnG+WPXrBsK+F7KLU=
+		</data>
+		<key>Resources/Resources/MonteCarloHowMany.xlsx</key>
+		<data>
+		8KyHc30bx1uG8krdoI9RqkeWbg4=
+		</data>
+		<key>Resources/Resources/MonteCarloHowManyUserGuide.docx</key>
+		<data>
+		7rDEAuBPLGb3mRoq1gfDiimTHZE=
+		</data>
+		<key>Resources/Resources/icon_128x128.png</key>
+		<data>
+		3eKSSL+0UUxFAaF2f/wOhGzH33o=
+		</data>
+		<key>Resources/Resources/icon_128x128@2x.png</key>
+		<data>
+		pzHWZ4C/4GxDcEkPBis0d/Fcxi0=
+		</data>
+		<key>Resources/Resources/icon_16x16.png</key>
+		<data>
+		3pbQFFh/WD2MdzLrqQikaapH01g=
+		</data>
+		<key>Resources/Resources/icon_16x16@2x.png</key>
+		<data>
+		tY+5Jivts01WuqK4+i7j1VGj1Nc=
+		</data>
+		<key>Resources/Resources/icon_256x256.png</key>
+		<data>
+		hchWBkr06D+GZpMZXiNKjzXzuSE=
+		</data>
+		<key>Resources/Resources/icon_256x256@2x.png</key>
+		<data>
+		6Nierf8wNkI+tRm2HpyN+7a/jk0=
+		</data>
+		<key>Resources/Resources/icon_32x32.png</key>
+		<data>
+		nMowa2bkQvHYN0rwYrDSHekx5Rw=
+		</data>
+		<key>Resources/Resources/icon_32x32@2x.png</key>
+		<data>
+		BEmkm7DmB+LAO1Mg7jlLCimOkss=
+		</data>
+		<key>Resources/Resources/icon_512x512.png</key>
+		<data>
+		pEnb89sYH9AA1Vw8wQ240f1Tk9o=
+		</data>
+		<key>Resources/Resources/icon_512x512@2x.png</key>
+		<data>
+		scEgpWOvr6Lb5smIWkkZEfF4B5o=
+		</data>
+		<key>Resources/Resources/simulation_totals_histogram.png</key>
+		<data>
+		POU8UlkL+WX1JATSokZKQ/pt7gs=
+		</data>
 		<key>Resources/base_library.zip</key>
 		<data>
 		K4HmVkSGcZVJJqDpw8VnBXIIEcc=
-		</data>
-		<key>Resources/icon-windowed.icns</key>
-		<data>
-		eEHOuYpZLB0vKGVIWGZOh5rH8+o=
 		</data>
 		<key>Resources/matplotlib/mpl-data/fonts/afm/cmex10.afm</key>
 		<data>
@@ -4570,6 +4630,11 @@
 			<key>requirement</key>
 			<string>cdhash H"d8ef2af8615ab602472e5ede1f319ed03f9e8f9a"</string>
 		</dict>
+		<key>Frameworks/Resources</key>
+		<dict>
+			<key>symlink</key>
+			<string>../Resources/Resources</string>
+		</dict>
 		<key>Frameworks/_tkinter.cpython-312-darwin.so</key>
 		<dict>
 			<key>cdhash</key>
@@ -5378,6 +5443,15 @@
 			<key>requirement</key>
 			<string>cdhash H"14d702d255b3abe10c8c99a77e00924e4c375447"</string>
 		</dict>
+		<key>Frameworks/matplotlib/backends/_tkagg.cpython-312-darwin.so</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			cD46R7o4x+JOVaKYOel5Bz3xDvQ=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"703e3a47ba38c7e24e55a29839e979073df10ef4"</string>
+		</dict>
 		<key>Frameworks/matplotlib/ft2font.cpython-312-darwin.so</key>
 		<dict>
 			<key>cdhash</key>
@@ -5971,6 +6045,13 @@
 			<key>symlink</key>
 			<string>../Resources/tk</string>
 		</dict>
+		<key>Resources/MonteCarloHowMany.icns</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pdwkQlWSLITbSxa0M05mfrQrqRKzGpYTd53Pj0xlfaE=
+			</data>
+		</dict>
 		<key>Resources/PIL</key>
 		<dict>
 			<key>symlink</key>
@@ -5985,6 +6066,111 @@
 		<dict>
 			<key>symlink</key>
 			<string>../Frameworks/Python.framework</string>
+		</dict>
+		<key>Resources/Resources/MonteCarloHowMany.icns</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pdwkQlWSLITbSxa0M05mfrQrqRKzGpYTd53Pj0xlfaE=
+			</data>
+		</dict>
+		<key>Resources/Resources/MonteCarloHowMany.ico</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			R5ZWp5xEQ13ifsdp+dmP3I48mYtLHjlwqo4ntRtu+/g=
+			</data>
+		</dict>
+		<key>Resources/Resources/MonteCarloHowMany.xlsx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g6pk07vNeHSgaGIyBRwv+RSiGrT8ubERJssKNnrSz6Y=
+			</data>
+		</dict>
+		<key>Resources/Resources/MonteCarloHowManyUserGuide.docx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ODr7Qht2OvSg4+TG266WHUJQIw6LFHDPLUk2Jl050iY=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_128x128.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XsEb9ESYCogp1L72w14tfv1UC/e/bA872Ch8f88PpM0=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_128x128@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sikLxTBU2MbQCPM+sGtb+y3kO4q/V3zZ3OUXHRbk5VU=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_16x16.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TpQ8/leGquIlWPwWtXk3LrVKZEbeLJkH7UFAVQUtphU=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_16x16@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			H2qN472TAZFdH3J9C63q36UOfi3LbfTlQ4/qTGH00+o=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_256x256.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vP1bHOAwWTB0LIc4T1dllxEWAN27zYSsmcLZKBht0C0=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_256x256@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			00OvlywDvTTHr2W7FOZEPmXFmCc3LLJz438tphCQzuw=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_32x32.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3O8apDwQk8fEPULB95uUXmg4SttnKI0dG7h9wx7JhNo=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_32x32@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GxJckncaFtX5/nVbba3DsKSFwC23Ad0gd7wNiaamOdI=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_512x512.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MofDGf1PmhfFEiphZa1zQMIsjA3Bx9GzAGSPmX0Rvkw=
+			</data>
+		</dict>
+		<key>Resources/Resources/icon_512x512@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VSRQHNEgnZ8XZE0dycUqqG0TnSO5bmCE6KZPofTqKzY=
+			</data>
+		</dict>
+		<key>Resources/Resources/simulation_totals_histogram.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ucoiMx6nSVCuTtzjs7I/9eFotZk6KItz+zF25iXQRWE=
+			</data>
 		</dict>
 		<key>Resources/_tkinter.cpython-312-darwin.so</key>
 		<dict>
@@ -6002,13 +6188,6 @@
 		<dict>
 			<key>symlink</key>
 			<string>../Frameworks/contourpy</string>
-		</dict>
-		<key>Resources/icon-windowed.icns</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			uQo7VuWRab4Phv4EEGmfQsyqFqDIXZgO8OtgaAMvCzY=
-			</data>
 		</dict>
 		<key>Resources/kiwisolver</key>
 		<dict>
